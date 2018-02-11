@@ -35,7 +35,7 @@ $ npm i -S vue-tiny-pagination
 ```
 
 ```javascript
-import {TinyPagination} from 'vue-datasource'
+import {TinyPagination} from 'vue-tiny-pagination'
 
 new Vue({
   el: '#app',
