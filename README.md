@@ -51,7 +51,7 @@ new Vue({
     }
   },
   components: {
-      TinyPagination
+    TinyPagination
   }
 });
 ```
