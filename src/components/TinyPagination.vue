@@ -32,8 +32,7 @@ export default {
       default: 'en'
     },
     customClass: {
-      type: String,
-      default: ''
+      type: String
     }
   },
   data () {
@@ -49,19 +48,21 @@ export default {
       return Language.translations[this.lang]
     },
     totalPages () {
-      return Math.ceil(this.total/15)
+      return Math.ceil(this.total/10)
     },
     titlePage () {
       return `${this.translation.title} ${this.currentPage}`
     },
     classFirstPage () {
       return {
-        disabled: (this.currentPage === 1)
+        disabled: (this.currentPage === 1),
+        'c-not-allowed': true
       }
     },
     classLastPage () {
       return {
-        disabled: (this.currentPage === this.totalPages)
+        disabled: (this.currentPage === this.totalPages),
+        'c-not-allowed': true
       }
     }
   },
