@@ -86,6 +86,6 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 All contributions are welcome send your PR and Issues.
 
 ### License
-This is a open-source software licensed under the [MIT license](https://raw.githubusercontent.com/coderdiaz/vue-datasource/master/LICENSE)
+This is a open-source software licensed under the [MIT license](https://raw.githubusercontent.com/coderdiaz/vue-tiny-pagination/master/LICENSE)
 
 ##### Crafted by Javier Diaz
