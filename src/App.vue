@@ -2,11 +2,11 @@
   <div id="app">
     <section class="section-hero">
       <div class="grid-hero container grid-lg text-center">
-        <img src="https://vuejs.org/images/logo.png">
+        <img src="https://vuejs.org/images/logo.png" width="150">
         <h1>&lt;vue-tiny-pagination /&gt;</h1>
         <h2>a Vue component for create a <u>tiny</u> pagination</h2>
         <p class="text-gray">
-          <a href="https://github.com/coderdiaz/vue-tiny-pagination" target="_blank">GitHub</a> | Latest version: <span class="version">0.1.0</span>
+          <a href="https://github.com/coderdiaz/vue-tiny-pagination" target="_blank">GitHub</a> | Latest version: <span class="version"></span>
         </p>
       </div>
     </section>
@@ -59,7 +59,36 @@
   }
 })</code></pre>
         <br>
-        <h2>Example</h2>
+        <h2>Basic Example</h2>
+        <div class="panel">
+          <div class="panel-body custom-panel">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>First Name</th>
+                  <th>Last name</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody v-if="users">
+                <tr v-for="user in users" :key="user.id">
+                  <td>{{user.id}}</td>
+                  <td>{{user.first_name}}</td>
+                  <td>{{user.last_name}}</td>
+                  <td>
+                    <figure class="avatar avatar-xl">
+                      <img :src="user.avatar" :alt="user.first_name">
+                    </figure>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
+        <div class="divider text-center" data-content="PAGINATION"></div>
+        <br>
         <div class="pagination centered bg-primary">
           <tiny-pagination
             :total="currentTotal"
@@ -74,72 +103,82 @@
         <br>
         <h2>Documentation</h2>
         <h5>Props</h5>
-        <table class="table table-stripe">
-          <thead>
-            <tr>
-              <th>Prop</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>total <i>(required)</i></td>
-              <td>Number</td>
-              <td>-</td>
-              <td>A number of total items.</td>
-            </tr>
-            <tr>
-              <td>page</td>
-              <td>Number</td>
-              <td>1</td>
-              <td>A number for set a default page.</td>
-            </tr>
-            <tr>
-              <td>lang</td>
-              <td>String</td>
-              <td>en</td>
-              <td>Default language to show (<i>Available: en, es</i>).</td>
-            </tr>
-            <tr>
-              <td>customClass</td>
-              <td>String</td>
-              <td></td>
-              <td>A prop for set a custom class.</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="panel">
+          <div class="panel-body custom-panel">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>total <i>(required)</i></td>
+                  <td>Number</td>
+                  <td>-</td>
+                  <td>A number of total items.</td>
+                </tr>
+                <tr>
+                  <td>page</td>
+                  <td>Number</td>
+                  <td>1</td>
+                  <td>A number for set a default page.</td>
+                </tr>
+                <tr>
+                  <td>lang</td>
+                  <td>String</td>
+                  <td>en</td>
+                  <td>Default language to show (<i>Available: en, es</i>).</td>
+                </tr>
+                <tr>
+                  <td>customClass</td>
+                  <td>String</td>
+                  <td></td>
+                  <td>A prop for set a custom class.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <br>
         <h5>Events</h5>
-        <table class="table table-stripe">
-          <thead>
-            <tr>
-              <th>Event</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>tiny:change-page</td>
-              <td>Get the current page from pagination <code>payload: {page: 1}</code>.</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="panel">
+          <div class="panel-body custom-panel">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>tiny:change-page</td>
+                  <td>Get the current page from pagination <code>payload: {page: 1}</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <br>
         <br>
         <div class="divider text-center" data-content="WHAT'S NEW"></div>
         <br>
         <div class="timeline">
-          <div class="timeline-item" id="timeline-example-1">
+          <div class="timeline-item">
             <div class="timeline-left">
-              <a href="#timeline-example-1" class="timeline-icon tooltip" data-tooltip="March 2016"></a>
+              <a href="#timeline-example-1" class="timeline-icon tooltip" data-tooltip="February 2017"></a>
             </div>
             <div class="timeline-content">
               <div class="tile">
                 <div class="tile-content">
-                  <p class="tile-subtitle">February 10, 2017</p>
-                  <p class="tile-title">Initial commit and first release.</p>
+                  <p class="tile-subtitle">February, 2017</p>
+                  <p class="tile-title"><span class="text-primary">[v0.1.0]</span> Initial commit and first release.</p>
+                  <p class="tile-title"><span class="text-primary">[v0.1.1]</span> Updated typo on README.md.</p>
+                  <p class="tile-title"><span class="text-primary">[v0.1.2]</span>  Changed default pageSize from <code>15 to 10</code>. Added cursor <code>not-allowed</code> for disabled page-items.</p>
                 </div>
               </div>
             </div>
@@ -149,7 +188,7 @@
     </section>
     <footer class="section-footer">
       <div  class="grid-footer container grid-lg">
-        <p><a href="https://dribbble.com/coderdiaz" target="_blank">Dribbble</a> | <a href="https://github.com/coderdiaz/vue-tiny-pagination" target="_blank">GitHub</a> | Version <span class="version">0.1.0</span></p>
+        <p><a href="https://dribbble.com/coderdiaz" target="_blank">Dribbble</a> | <a href="https://github.com/coderdiaz/vue-tiny-pagination" target="_blank">GitHub</a> | Version <span class="version"></span></p>
         <p>Designed and built with <span class="text-error">♥</span> by <a href="https://twitter.com/coderdiaz" target="_blank">Javier Diaz</a>. Licensed under the <a href="https://github.com/coderdiaz/vue-tiny-pagination/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
       </div>
     </footer>
@@ -157,19 +196,39 @@
 </template>
 
 <script>
+import {getUsers} from './services/api'
 import TinyPagination from "./components/TinyPagination";
 export default {
   name: "app",
   data() {
     return {
-      currentTotal: 100,
+      currentTotal: 0,
       currentPage: 1,
-      message: "A Vue component for create tiny pagination"
+      message: "A Vue component for create tiny pagination",
+      users: [],
+      error: {
+        status: false,
+        message: ''
+      }
     };
   },
+  created () {
+    this.getData(this.currentPage)
+  },
   methods: {
+    getData (page) {
+      this.error.status = false
+      getUsers(page).then((response) => {
+        this.users = response.data.data
+        this.currentTotal = response.data.total
+      }).catch((err) => {
+        this.error.status = true
+        this.error.message = err.message
+      })  
+    },
     changePage(pagination) {
       this.currentPage = pagination.page
+      this.getData(this.currentPage)
     }
   },
   components: {
