@@ -2,7 +2,7 @@
   <div id="app">
     <section class="section-hero">
       <div class="grid-hero container grid-lg text-center">
-        <img src="./assets/logo.png">
+        <img src="https://vuejs.org/images/logo.png">
         <h1>&lt;vue-tiny-pagination /&gt;</h1>
         <h2>a Vue component for create a <u>tiny</u> pagination</h2>
         <p class="text-gray">
