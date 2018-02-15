@@ -10,6 +10,14 @@
       <li class="page-item" :class="classLastPage">
         <a href="#" @click.prevent="nextPage">{{translation.next}}</a>
       </li>
+      <li class="page-item">
+        <select class="tiny-form-select" v-model="limit">
+          <option
+            v-for="(limit, index) in limits"
+            :value="limit"
+            :key="index">{{limit}}/{{translation.title}}</option>
+        </select>
+      </li>
     </ul>
   </div>
 </template>
@@ -37,7 +45,9 @@ export default {
   },
   data () {
     return {
-      currentPage: 1
+      currentPage: 1,
+      limit: 10,
+      limits: [10, 15, 20, 50, 100]
     }
   },
   created () {
@@ -48,7 +58,7 @@ export default {
       return Language.translations[this.lang]
     },
     totalPages () {
-      return Math.ceil(this.total/10)
+      return Math.ceil(this.total/this.limit)
     },
     titlePage () {
       return `${this.translation.title} ${this.currentPage}`
@@ -149,6 +159,31 @@ export default {
       margin: 0;
       opacity: .5;
     }
+  }
+
+  .tiny-form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-transform: lowercase;
+    border: .05rem solid #caced7;
+    border-radius: .1rem;
+    font-size: .8rem;
+    height: 1.8rem;
+    line-height: 1rem;
+    outline: none;
+    padding: .35rem .4rem;
+    vertical-align: middle;
+    width: 100%;
+    &:focus {
+      border-color: #5755d9;
+      box-shadow: 0 0 0 0.1rem rgba(87, 85, 217, .2)
+    }
+  }
+
+  .tiny-form-select:not([multiple]):not([size]) {
+    background: #fff url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns="http://www.w3.org/2000/svg"…path%20fill="%23667189"%20d="M2%200L0%202h4zm0%205L0%203h4z"/%3E%3C/svg%3E') no-repeat right .35rem center/.4rem .5rem;
+    padding-right: 1.2rem;
   }
 }
 </style>
