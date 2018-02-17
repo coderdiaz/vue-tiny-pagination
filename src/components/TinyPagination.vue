@@ -11,7 +11,7 @@
         <a href="#" @click.prevent="nextPage">{{translation.next}}</a>
       </li>
       <li class="page-item">
-        <select class="tiny-form-select" v-model="limit">
+        <select class="tiny-form-select" v-model="currentLimit" @change="onLimitChange">
           <option
             v-for="(limit, index) in limits"
             :value="limit"
@@ -41,13 +41,18 @@ export default {
     },
     customClass: {
       type: String
+    },
+    limits: {
+      type: Array,
+      default () {
+        return [10, 15, 20, 50, 100]
+      }
     }
   },
   data () {
     return {
       currentPage: 1,
-      limit: 10,
-      limits: [10, 15, 20, 50, 100]
+      currentLimit: 10
     }
   },
   created () {
@@ -58,7 +63,7 @@ export default {
       return Language.translations[this.lang]
     },
     totalPages () {
-      return Math.ceil(this.total/this.limit)
+      return Math.ceil(this.total/this.currentLimit)
     },
     titlePage () {
       return `${this.translation.title} ${this.currentPage}`
@@ -86,12 +91,20 @@ export default {
       if (this.currentPage > 1) {
         this.currentPage -= 1
       }
+    },
+    onLimitChange () {
+      this.currentPage = 1
     }
   },
   watch: {
     currentPage (value) {
       this.$emit('tiny:change-page', {
         page: value
+      })
+    },
+    currentLimit (value) {
+      this.$emit('tiny:change-limit', {
+        limit: value
       })
     }
   }
