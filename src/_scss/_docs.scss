@@ -9,7 +9,7 @@ kbd {
 
 .version {
   &::after {
-    content: '0.1.2'
+    content: '0.2.1'
   }
 }
 
@@ -72,6 +72,16 @@ kbd {
 // Section features
 .section-features {
   padding: 4.5rem .5rem;
+  .tiny-pagination {
+    &.tiny-white {
+      justify-content: center;
+      .page-item {
+        a {
+          color: #f8f9fa;
+        }
+      }
+    }
+  }
 }
 
 // Section usage
@@ -82,8 +92,8 @@ kbd {
     border-radius: 5px;
   }
   .tiny-pagination {
-    justify-content: space-between;
     &.custom-tiny-class {
+      justify-content: space-between;
       .page-item {
         &.disabled {
           a {
