@@ -2,13 +2,13 @@
   <div class="vue-tiny-pagination">
     <ul class="tiny-pagination" :class="customClass">
       <li class="page-item" :class="classFirstPage">
-        <a href="#" @click.prevent="lastPage">{{translation.prev}}</a>
+        <a class="btn-prev-page" href="#" @click.prevent="lastPage">{{translation.prev}}</a>
       </li>
       <li class="page-item">
         <span>{{titlePage}}</span>
       </li>
       <li class="page-item" :class="classLastPage">
-        <a href="#" @click.prevent="nextPage">{{translation.next}}</a>
+        <a class="btn-next-page" href="#" @click.prevent="nextPage">{{translation.next}}</a>
       </li>
       <li class="page-item">
         <select class="tiny-form-select" v-model="currentLimit" @change="onLimitChange">
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import {Language} from '../utils'
+import {Language, AvailableLanguages} from '../utils'
 export default {
   name: 'TinyPagination',
   props: {
@@ -60,7 +60,9 @@ export default {
   },
   computed: {
     translation () {
-      return Language.translations[this.lang]
+      return (AvailableLanguages.includes(this.lang)) ?
+        Language.translations[this.lang]
+      : Language.translations['en']
     },
     totalPages () {
       return Math.ceil(this.total/this.currentLimit)
