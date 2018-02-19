@@ -18,6 +18,11 @@
             <p class="text-secondary">
               This component provides a basic styles for pagination and a minimalistic design. This pagination can be used for paginate tables, data lists, etc.
             </p>
+            <p class="text-center">
+              <tiny-pagination
+                :total="3000"
+                custom-class="tiny-white"></tiny-pagination>
+            </p>
           </div>
         </div>
       </div>
@@ -29,8 +34,6 @@
         <pre class="code" data-lang="Bash"><code><span class="tag">$</span>npm install <span class="atv">vue-tiny-pagination</span> --save</code></pre>
         <p class="h5">Install with Yarn</p>
         <pre class="code" data-lang="Bash"><code><span class="tag">$</span>yarn add <span class="atv">vue-tiny-pagination</span></code></pre>
-        <p class="h5">Install with Bower</p>
-        <pre class="code" data-lang="Bash"><code><span class="tag">$</span>bower install <span class="atv">vue-tiny-pagination</span></code></pre>
         <br>
         <h2>Basic usage</h2>
         <pre class="code" data-lang="HTML"><code>&lt;<span class="tag">div</span> id=<span class="atv">"app"</span>&gt;
@@ -93,7 +96,8 @@
           <tiny-pagination
             :total="currentTotal"
             custom-class="custom-tiny-class"
-            @tiny:change-page="changePage"></tiny-pagination>
+            @tiny:change-page="changePage"
+            @tiny:change-limit="changeLimit"></tiny-pagination>
         </div>
         <br>
         <kbd>Current page: {{currentPage}}</kbd>
@@ -125,7 +129,7 @@
                   <td>page</td>
                   <td>Number</td>
                   <td>1</td>
-                  <td>A number for set a default page.</td>
+                  <td>Prop to set a default page.</td>
                 </tr>
                 <tr>
                   <td>lang</td>
@@ -136,8 +140,14 @@
                 <tr>
                   <td>customClass</td>
                   <td>String</td>
-                  <td></td>
-                  <td>A prop for set a custom class.</td>
+                  <td>""</td>
+                  <td>Prop to set a custom class.</td>
+                </tr>
+                <tr>
+                  <td>limits</td>
+                  <td>Array</td>
+                  <td>[10, 15, 20, 50, 100]</td>
+                  <td>Prop to set a default limits to page sizes.</td>
                 </tr>
               </tbody>
             </table>
@@ -159,6 +169,10 @@
                   <td>tiny:change-page</td>
                   <td>Get the current page from pagination <code>payload: {page: 1}</code>.</td>
                 </tr>
+                <tr>
+                  <td>tiny:change-limit</td>
+                  <td>Get the current limit from pagination <code>payload: {limit: 10}</code>.</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -179,6 +193,7 @@
                   <p class="tile-title"><span class="text-primary">[v0.1.0]</span> Initial commit and first release.</p>
                   <p class="tile-title"><span class="text-primary">[v0.1.1]</span> Updated typo on README.md.</p>
                   <p class="tile-title"><span class="text-primary">[v0.1.2]</span>  Changed default pageSize from <code>15 to 10</code>. Added cursor <code>not-allowed</code> for disabled page-items.</p>
+                  <p class="tile-title"><span class="text-primary">[v0.2.1]</span> Added prop for items per page and event for <code>$emit</code> the current limit (<code>payload: {limit: 10}</code>). Added testing for minor functionality.</p>
                 </div>
               </div>
             </div>
@@ -204,6 +219,7 @@ export default {
     return {
       currentTotal: 0,
       currentPage: 1,
+      currentLimit: 10,
       message: "A Vue component for create tiny pagination",
       users: [],
       error: {
@@ -216,9 +232,9 @@ export default {
     this.getData(this.currentPage)
   },
   methods: {
-    getData (page) {
+    getData (page, limit) {
       this.error.status = false
-      getUsers(page).then((response) => {
+      getUsers(page, limit).then((response) => {
         this.users = response.data.data
         this.currentTotal = response.data.total
       }).catch((err) => {
@@ -228,7 +244,11 @@ export default {
     },
     changePage(pagination) {
       this.currentPage = pagination.page
-      this.getData(this.currentPage)
+      this.getData(this.currentPage, this.currentLimit)
+    },
+    changeLimit (payload) {
+      this.currentLimit = payload.limit
+      this.getData(this.currentPage, this.currentLimit)
     }
   },
   components: {

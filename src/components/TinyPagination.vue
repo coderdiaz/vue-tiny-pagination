@@ -2,20 +2,28 @@
   <div class="vue-tiny-pagination">
     <ul class="tiny-pagination" :class="customClass">
       <li class="page-item" :class="classFirstPage">
-        <a href="#" @click.prevent="lastPage">{{translation.prev}}</a>
+        <a class="btn-prev-page" href="#" @click.prevent="lastPage">{{translation.prev}}</a>
       </li>
       <li class="page-item">
         <span>{{titlePage}}</span>
       </li>
       <li class="page-item" :class="classLastPage">
-        <a href="#" @click.prevent="nextPage">{{translation.next}}</a>
+        <a class="btn-next-page" href="#" @click.prevent="nextPage">{{translation.next}}</a>
+      </li>
+      <li class="page-item">
+        <select class="tiny-form-select" v-model="currentLimit" @change="onLimitChange">
+          <option
+            v-for="(limit, index) in limits"
+            :value="limit"
+            :key="index">{{limit}}/{{translation.title}}</option>
+        </select>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import {Language} from '../utils'
+import {Language, AvailableLanguages} from '../utils'
 export default {
   name: 'TinyPagination',
   props: {
@@ -33,11 +41,18 @@ export default {
     },
     customClass: {
       type: String
+    },
+    limits: {
+      type: Array,
+      default () {
+        return [10, 15, 20, 50, 100]
+      }
     }
   },
   data () {
     return {
-      currentPage: 1
+      currentPage: 1,
+      currentLimit: 10
     }
   },
   created () {
@@ -45,10 +60,12 @@ export default {
   },
   computed: {
     translation () {
-      return Language.translations[this.lang]
+      return (AvailableLanguages.includes(this.lang)) ?
+        Language.translations[this.lang]
+      : Language.translations['en']
     },
     totalPages () {
-      return Math.ceil(this.total/10)
+      return Math.ceil(this.total/this.currentLimit)
     },
     titlePage () {
       return `${this.translation.title} ${this.currentPage}`
@@ -76,12 +93,20 @@ export default {
       if (this.currentPage > 1) {
         this.currentPage -= 1
       }
+    },
+    onLimitChange () {
+      this.currentPage = 1
     }
   },
   watch: {
     currentPage (value) {
       this.$emit('tiny:change-page', {
         page: value
+      })
+    },
+    currentLimit (value) {
+      this.$emit('tiny:change-limit', {
+        limit: value
       })
     }
   }
@@ -149,6 +174,31 @@ export default {
       margin: 0;
       opacity: .5;
     }
+  }
+
+  .tiny-form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-transform: lowercase;
+    border: .05rem solid #caced7;
+    border-radius: .1rem;
+    font-size: .8rem;
+    height: 1.8rem;
+    line-height: 1rem;
+    outline: none;
+    padding: .35rem .4rem;
+    vertical-align: middle;
+    width: 100%;
+    &:focus {
+      border-color: #5755d9;
+      box-shadow: 0 0 0 0.1rem rgba(87, 85, 217, .2)
+    }
+  }
+
+  .tiny-form-select:not([multiple]):not([size]) {
+    background: #fff url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns="http://www.w3.org/2000/svg"…path%20fill="%23667189"%20d="M2%200L0%202h4zm0%205L0%203h4z"/%3E%3C/svg%3E') no-repeat right .35rem center/.4rem .5rem;
+    padding-right: 1.2rem;
   }
 }
 </style>

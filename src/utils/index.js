@@ -12,3 +12,5 @@ export const Language = {
     }
   }
 }
+
+export const AvailableLanguages = ['en', 'es']

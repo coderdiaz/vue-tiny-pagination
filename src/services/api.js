@@ -6,6 +6,6 @@ const API_URL = `https://reqres.in/api`
  * @param {Number} page
  * @return AxiosPromise
  */
-export const getUsers = (page = 1) => {
-  return axios.get(`${API_URL}/users?per_page=10&page=${page}`)
+export const getUsers = (page = 1, limit = 10) => {
+  return axios.get(`${API_URL}/users?per_page=${limit}&page=${page}`)
 }
