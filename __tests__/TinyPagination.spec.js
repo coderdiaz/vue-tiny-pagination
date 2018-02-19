@@ -16,14 +16,21 @@ describe('TinyPagination.vue', () => {
     expect(cmp.vm.currentPage).toBe(2)
   })
 
-  it('Page 1 is the page by default', () => {
+  it('when the component is created without page prop, Page 1 is the page by default', () => {
     cmp = createComponent({total: 300})
     expect(cmp.vm.page).toBe(1)
   })
 
-  it('English is the language by default', () => {
+  it('when the component is created, English is the language by default', () => {
     cmp = createComponent({total: 300})
     expect(cmp.vm.lang).toBe('en')
+    expect(cmp.vm.translation.title).toBe('Page')
+  })
+
+  it('when the lang prop is set to spanish, the component is translated', () => {
+    cmp = createComponent({total: 300, lang: 'es'})
+    expect(cmp.vm.lang).toBe('es')
+    expect(cmp.vm.translation.title).toBe('Página')
   })
 
 })
