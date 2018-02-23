@@ -16,7 +16,8 @@
     <a href="http://npmjs.com/package/vue-tiny-pagination"><img src="https://img.shields.io/npm/v/vue-tiny-pagination.svg?style=flat-square"></a>
     <a href="http://npmjs.com/package/vue-tiny-pagination"><img src="https://img.shields.io/npm/dm/vue-tiny-pagination.svg?style=flat-square"></a>
     <a href="https://www.paypal.me/coderdiaz"><img src="https://img.shields.io/badge/invite-coffee-red.svg?style=flat-square"></a>
-</p>
+    <a href="https://travis-ci.org/coderdiaz/vue-tiny-pagination"><img src="https://travis-ci.org/coderdiaz/vue-tiny-pagination.svg?branch=master&style=flat-square"></a>
+</a>
 
 ---
 
