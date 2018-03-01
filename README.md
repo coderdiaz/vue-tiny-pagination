@@ -61,6 +61,9 @@ new Vue({
 
 For see the complete documentation go to the [official website](https://coderdiaz.me/vue-tiny-pagination).
 
+### Donate
+
+<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/coderdiaz"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
 
 ### Development
 
