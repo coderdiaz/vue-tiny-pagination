@@ -7,7 +7,7 @@ const install = (Vue, opts ={}) => {
 }
 
 const plugin = {
-  version: '0.2.1-beta.5',
+  version: '0.2.1-beta.6',
   install,
   TinyPagination
 }
