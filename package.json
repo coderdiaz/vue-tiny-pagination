@@ -1,7 +1,7 @@
 {
   "name": "vue-tiny-pagination",
   "description": "A Vue component for create a tiny pagination",
-  "version": "0.2.1-beta.7",
+  "version": "0.2.1-beta.8",
   "author": "Javier Diaz <coderdiaz@gmail.com>",
   "license": "MIT",
   "private": false,
