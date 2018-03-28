@@ -23,6 +23,7 @@
 </template>
 
 <script>
+const version = '0.2.1'
 export default {
   name: 'TinyPagination',
   props: {
