@@ -1,17 +1,24 @@
 import TinyPagination from './src/components/TinyPagination.vue'
 
-const install = (Vue, opts ={}) => {
+export function install (Vue) {
+  if (install.installed) return
+  install.installed = true
   Vue.component('TinyPagination', TinyPagination)
 }
 
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
+const plugin = {
+  install
 }
 
-module.exports = {
-  version: '0.2.1-beta.7',
-  install,
-  TinyPagination
+let GlobalVue = null
+if (typeof window !== 'undefined') {
+	GlobalVue = window.Vue
+} else if (typeof global !== 'undefined') {
+	GlobalVue = global.Vue
+}
+if (GlobalVue) {
+	GlobalVue.use(plugin)
 }
 
-module.exports.default = module.exports
+export { TinyPagination }
+export default plugin
