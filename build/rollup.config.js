@@ -3,7 +3,7 @@ import buble from 'rollup-plugin-buble'
 import uglify from 'rollup-plugin-uglify-es'
 
 export default {
-  input: 'index.js',
+  input: 'src/index.js',
   output: {
     name: 'VueTinyPagination',
     exports: 'named'
