@@ -13,6 +13,7 @@
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-tiny-pagination.umd.js",
     "compile:docs": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy:docs": "push-dir --dir=public --branch=gh-pages",
+    "prepublish": "npm test && npm run build",
     "test": "jest"
   },
   "main": "dist/vue-tiny-pagination.umd.js",
