@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import {Language, AvailableLanguages} from '../utils'
 export default {
   name: 'TinyPagination',
   props: {
@@ -52,7 +51,20 @@ export default {
   data () {
     return {
       currentPage: 1,
-      currentLimit: 10
+      currentLimit: 10,
+      translations: {
+        en: {
+          prev: 'Previous',
+          title: 'Page',
+          next: 'Next'
+        },
+        es: {
+          prev: 'Anterior',
+          title: 'Página',
+          next: 'Siguiente'
+        }
+      },
+      availableLanguages: ['en', 'es']
     }
   },
   created () {
@@ -60,9 +72,9 @@ export default {
   },
   computed: {
     translation () {
-      return (AvailableLanguages.includes(this.lang)) ?
-        Language.translations[this.lang]
-      : Language.translations['en']
+      return (this.availableLanguages.includes(this.lang)) ?
+        this.translations[this.lang]
+      : this.translations['en']
     },
     totalPages () {
       return Math.ceil(this.total/this.currentLimit)
