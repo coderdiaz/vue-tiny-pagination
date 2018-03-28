@@ -23,7 +23,6 @@
 </template>
 
 <script>
-const version = '0.2.1'
 export default {
   name: 'TinyPagination',
   props: {
@@ -51,6 +50,7 @@ export default {
   },
   data () {
     return {
+      version: '0.2.1',
       currentPage: 1,
       currentLimit: 10,
       translations: {
