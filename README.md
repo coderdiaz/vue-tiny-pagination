@@ -62,6 +62,13 @@ import TinyPagination from 'vue-tiny-pagination'
 Vue.use(TinyPagination)
 ```
 
+For use in browser can you use Unpkg:
+```
+https://unpkg.com/vue-tiny-pagination@latest/dist/vue-tiny-pagination.min.js
+```
+
+Example in browser here: https://jsfiddle.net/coderdiaz/g5vLex83/3/
+
 ### Documentation
 
 For see the complete documentation go to the [official website](https://coderdiaz.me/vue-tiny-pagination).
