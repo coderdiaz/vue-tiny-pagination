@@ -34,7 +34,7 @@ $ npm i -S vue-tiny-pagination
       @tiny:change-page="changePage"></tiny-pagination>
 </div>
 ```
-
+You can import the component and define this in specific section:
 ```javascript
 import {TinyPagination} from 'vue-tiny-pagination'
 
@@ -56,6 +56,18 @@ new Vue({
   }
 });
 ```
+or define the component on Global application
+```javascript
+import TinyPagination from 'vue-tiny-pagination'
+Vue.use(TinyPagination)
+```
+
+For use in browser can you use Unpkg:
+```
+https://unpkg.com/vue-tiny-pagination@latest/dist/vue-tiny-pagination.min.js
+```
+
+Example in browser here: https://jsfiddle.net/coderdiaz/g5vLex83/3/
 
 ### Documentation
 
