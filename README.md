@@ -34,7 +34,8 @@ $ npm i -S vue-tiny-pagination
       @tiny:change-page="changePage"></tiny-pagination>
 </div>
 ```
-You can import the component and define this in specific section:
+
+You can use **local registration**
 ```javascript
 import {TinyPagination} from 'vue-tiny-pagination'
 
@@ -56,13 +57,15 @@ new Vue({
   }
 });
 ```
-or define the component on Global application
+or **global registration**
 ```javascript
 import TinyPagination from 'vue-tiny-pagination'
 Vue.use(TinyPagination)
 ```
 
-For use in browser can you use Unpkg:
+### Usage in browser
+
+In browser you can use Unpkg:
 ```
 https://unpkg.com/vue-tiny-pagination@latest/dist/vue-tiny-pagination.min.js
 ```
@@ -75,7 +78,7 @@ For see the complete documentation go to the [official website](https://coderdia
 
 ### Donate
 
-<a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/coderdiaz"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
+<a href="https://www.buymeacoffee.com/coderdiaz" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ### Development
 
@@ -86,8 +89,14 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# build docs with minification
+npm run compile:docs
+
+# build project
 npm run build
+
+# run tests
+npm run test
 ```
 
 ### What's Included
