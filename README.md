@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  a Vue component for create a tiny pagination
+  A Vue component for create a tiny pagination with Flexbox
 </p>
 
 <p align="center">
