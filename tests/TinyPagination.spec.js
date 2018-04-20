@@ -1,6 +1,13 @@
 import {mount} from 'vue-test-utils'
+import Vue from 'vue'
 import TinyPagination from '../src/components/TinyPagination.vue'
-import { create } from 'domain';
+
+const Constructor = Vue.extend(TinyPagination)
+const vm = new Constructor({
+  propsData: {
+    total: 100
+  }
+}).$mount()
 
 // Helper function to create a component
 const createComponent = propsData => mount(TinyPagination, {propsData})
@@ -9,6 +16,10 @@ describe('TinyPagination.vue', () => {
   let cmp
   it('has a created hook', () => {
     expect(typeof TinyPagination.created).toBe('function')
+  })
+
+  it('should match the snapshot', () => {
+    expect(vm.$el).toMatchSnapshot()
   })
 
   describe('Properties', () => {
@@ -37,6 +48,17 @@ describe('TinyPagination.vue', () => {
     it('when the lang prop is set to not available language, English is the language by default', () => {
       cmp = createComponent({total: 300, lang: 'fr'})
       expect(cmp.vm.translation.title).toBe('Page')
+    })
+
+    it('when the show limit is not set, true is by default', () => {
+      cmp = createComponent({ total: 100 })
+      expect(cmp.vm.showLimit).toBe(true)
+    })
+
+    it('when the showLimit is set, prop is same', () => {
+      let showLimit = true
+      cmp = createComponent({ total: 100, showLimit })
+      expect(cmp.vm.showLimit).toBe(showLimit)
     })
   })
 

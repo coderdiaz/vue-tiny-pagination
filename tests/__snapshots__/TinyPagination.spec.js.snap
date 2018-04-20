@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TinyPagination.vue should match the snapshot 1`] = `
+<div
+  class="vue-tiny-pagination"
+>
+  <ul
+    class="tiny-pagination"
+  >
+    <li
+      class="page-item disabled c-not-allowed"
+    >
+      <a
+        class="btn-prev-page"
+        href="#"
+      >
+        Previous
+      </a>
+    </li>
+     
+    <li
+      class="page-item"
+    >
+      <span>
+        Page 1
+      </span>
+    </li>
+     
+    <li
+      class="page-item c-not-allowed"
+    >
+      <a
+        class="btn-next-page"
+        href="#"
+      >
+        Next
+      </a>
+    </li>
+     
+    <li
+      class="page-item"
+    >
+      <select
+        class="tiny-form-select"
+      >
+        <option
+          value="10"
+        >
+          10/Page
+        </option>
+        <option
+          value="15"
+        >
+          15/Page
+        </option>
+        <option
+          value="20"
+        >
+          20/Page
+        </option>
+        <option
+          value="50"
+        >
+          50/Page
+        </option>
+        <option
+          value="100"
+        >
+          100/Page
+        </option>
+      </select>
+    </li>
+  </ul>
+</div>
+`;
