@@ -10,7 +10,7 @@
       <li class="page-item" :class="classLastPage">
         <a class="btn-next-page" href="#" @click.prevent="nextPage">{{translation.next}}</a>
       </li>
-      <li class="page-item">
+      <li v-if="showLimit" class="page-item">
         <select class="tiny-form-select" v-model="currentLimit" @change="onLimitChange">
           <option
             v-for="(limit, index) in limits"
@@ -46,6 +46,10 @@ export default {
       default () {
         return [10, 15, 20, 50, 100]
       }
+    },
+    showLimit: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
