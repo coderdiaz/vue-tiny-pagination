@@ -149,6 +149,12 @@
                   <td>[10, 15, 20, 50, 100]</td>
                   <td>Prop to set a default limits to page sizes.</td>
                 </tr>
+                <tr>
+                  <td>showLimit</td>
+                  <td>Boolean</td>
+                  <td>true</td>
+                  <td>Prop to disable the limit selector.</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -193,7 +199,35 @@
                   <p class="tile-title"><span class="text-primary">[v0.1.0]</span> Initial commit and first release.</p>
                   <p class="tile-title"><span class="text-primary">[v0.1.1]</span> Updated typo on README.md.</p>
                   <p class="tile-title"><span class="text-primary">[v0.1.2]</span>  Changed default pageSize from <code>15 to 10</code>. Added cursor <code>not-allowed</code> for disabled page-items.</p>
-                  <p class="tile-title"><span class="text-primary">[v0.2.1]</span> Added prop for items per page and event for <code>$emit</code> the current limit (<code>payload: {limit: 10}</code>). Added testing for minor functionality.</p>
+                  <p class="tile-title"><span class="text-primary">[v0.2.0]</span> Added prop for items per page and event for <code>$emit</code> the current limit (<code>payload: {limit: 10}</code>). Added testing for minor functionality.</p>
+                  <p class="tile-title"><span class="text-primary">[v0.2.1]</span> Added builds for use in browser and refactoring project structure.</p>
+                  <p class="tile-title"><span class="text-primary">[v0.2.2]</span> Now you can disable a limit selector using a <code>showLimit</code> prop.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <a href="#timeline-example-1" class="timeline-icon tooltip" data-tooltip="February 2017"></a>
+            </div>
+            <div class="timeline-content">
+              <div class="tile">
+                <div class="tile-content">
+                  <p class="tile-subtitle">March, 2017</p>
+                  <p class="tile-title"><span class="text-primary">[v0.2.1]</span> Added builds for use in browser and refactoring project structure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <a href="#timeline-example-1" class="timeline-icon tooltip" data-tooltip="February 2017"></a>
+            </div>
+            <div class="timeline-content">
+              <div class="tile">
+                <div class="tile-content">
+                  <p class="tile-subtitle">April, 2017</p>
+                  <p class="tile-title"><span class="text-primary">[v0.2.2]</span> Now you can disable a limit selector using a <code>showLimit</code> prop.</p>
                 </div>
               </div>
             </div>
