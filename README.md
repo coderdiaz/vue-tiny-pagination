@@ -29,9 +29,9 @@ $ npm i -S vue-tiny-pagination
 
 ```html
 <div id="#app">
-    <tiny-pagination
-      :total="currentTotal"
-      @tiny:change-page="changePage"></tiny-pagination>
+  <tiny-pagination
+    :total="currentTotal"
+    @tiny:change-page="changePage"></tiny-pagination>
 </div>
 ```
 
@@ -75,37 +75,6 @@ Example in browser here: https://jsfiddle.net/coderdiaz/g5vLex83/3/
 ### Documentation
 
 For see the complete documentation go to the [official website](https://coderdiaz.me/vue-tiny-pagination).
-
-### Donate
-
-<a href="https://www.buymeacoffee.com/coderdiaz" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-### Development
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build docs with minification
-npm run compile:docs
-
-# build project
-npm run build
-
-# run tests
-npm run test
-```
-
-### What's Included
-
-- `npm run dev`: Webpack + `vue-loader` with proper config for source maps & hot-reload.
-
-- `npm run build`: build with HTML/CSS/JS minification.
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader). Also check out the [breaking changes in vue-loader@9.0.0](https://github.com/vuejs/vue-loader/releases/tag/v9.0.0).
 
 ### Contributions
 All contributions are welcome send your PR and Issues.
