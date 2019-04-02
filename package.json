@@ -9,7 +9,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "vue-cli-service build --target lib --name VueTinyPagination packages/TinyPagination/index.js",
+    "build": "vue-cli-service build --target lib --name VueTinyPagination index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "prepare": "yarn test:unit && yarn build"
