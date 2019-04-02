@@ -100,14 +100,14 @@ describe('TinyPagination.vue', () => {
     it('calls nextPage when click on next button', () => {
       cmp.vm.nextPage = jest.fn();
 
-      const el = cmp.find('.btn-next-page').trigger('click');
+      cmp.find('.btn-next-page').trigger('click');
       expect(cmp.vm.nextPage).toBeCalled();
     });
 
     it('call lastPage when click on prev button', () => {
       cmp.vm.lastPage = jest.fn();
 
-      const el = cmp.find('.btn-prev-page').trigger('click');
+      cmp.find('.btn-prev-page').trigger('click');
       expect(cmp.vm.lastPage).toBeCalled();
     });
   });
