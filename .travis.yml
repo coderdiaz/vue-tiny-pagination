@@ -9,4 +9,4 @@ cache:
 install:
   - yarn install
 script:
-  - yarn run test
+  - yarn test:unit

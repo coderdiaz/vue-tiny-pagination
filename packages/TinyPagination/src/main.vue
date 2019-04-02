@@ -28,49 +28,49 @@ export default {
   props: {
     total: {
       type: Number,
-      required: true
+      required: true,
     },
     page: {
       type: Number,
-      default: 1
+      default: 1,
     },
     lang: {
       type: String,
-      default: 'en'
+      default: 'en',
     },
     customClass: {
-      type: String
+      type: String,
     },
     limits: {
       type: Array,
       default () {
-        return [10, 15, 20, 50, 100]
-      }
+        return [10, 15, 20, 50, 100];
+      },
     },
     showLimit: {
       type: Boolean,
-      default: true
+      default: true,
     }
   },
   data () {
     return {
-      version: '0.2.1',
+      version: '0.2.3',
       currentPage: 1,
       currentLimit: 10,
       translations: {
         en: {
           prev: 'Previous',
           title: 'Page',
-          next: 'Next'
+          next: 'Next',
         },
         es: {
           prev: 'Anterior',
           title: 'Página',
-          next: 'Siguiente'
+          next: 'Siguiente',
         }
       },
-      availableLanguages: ['en', 'es']
-    }
+      availableLanguages: ['en', 'es'],
+    };
   },
   created () {
     this.currentPage = this.page
