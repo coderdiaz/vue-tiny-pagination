@@ -54,7 +54,7 @@ export default {
   },
   data () {
     return {
-      version: '0.2.1',
+      version: '0.2.3',
       currentPage: 1,
       currentLimit: 10,
       translations: {
