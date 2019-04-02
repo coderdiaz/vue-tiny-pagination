@@ -9,11 +9,14 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "vue-cli-service build --target lib --name VueTinyPagination index.js",
+    "build": "rollup --config rollup.config.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "prepare": "yarn test:unit && yarn build"
   },
+  "main": "dist/vue-tiny-pagination.umd.js",
+  "module": "dist/vue-tiny-pagination.esm.js",
+  "unpkg": "dist/vue-tiny-pagination.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderdiaz/vue-tiny-pagination.git"
@@ -45,6 +48,9 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
     "node-sass": "^4.9.0",
+    "rollup": "^1.8.0",
+    "rollup-plugin-commonjs": "^9.2.3",
+    "rollup-plugin-vue": "^4.7.2",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.17"
   }
