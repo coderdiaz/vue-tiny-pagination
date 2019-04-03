@@ -50,6 +50,7 @@
     "node-sass": "^4.9.0",
     "rollup": "^1.8.0",
     "rollup-plugin-commonjs": "^9.2.3",
+    "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-vue": "^4.7.2",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.17"
