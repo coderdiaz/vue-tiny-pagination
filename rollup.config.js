@@ -1,5 +1,6 @@
 import vue from 'rollup-plugin-vue';
 import commonjs from 'rollup-plugin-commonjs';
+import { terser } from 'rollup-plugin-terser';
 
 export default [
   // ESM build to be used with webpack/rollup.
@@ -12,6 +13,7 @@ export default [
     plugins: [
       vue(),
       commonjs(),
+      terser(),
     ],
   },
   // UMD build.
@@ -25,6 +27,7 @@ export default [
     plugins: [
       vue(),
       commonjs(),
+      terser(),
     ],
   },
   // SSR build.
@@ -37,6 +40,7 @@ export default [
     plugins: [
       vue({ template: { optimizeSSR: true } }),
       commonjs(),
+      terser(),
     ],
   },
   // Browser build.
@@ -50,6 +54,7 @@ export default [
     plugins: [
       vue(),
       commonjs(),
+      terser(),
     ],
   },
 ];
