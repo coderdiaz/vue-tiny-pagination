@@ -1,6 +1,8 @@
 {
   "name": "vue-tiny-pagination",
   "version": "0.3.1",
+  "productName": "Vue Tiny Pagination",
+  "description": "A Vue component for create a tiny pagination with Flexbox",
   "author": {
     "name": "Javier Diaz Chamorro",
     "email": "hello@coderdiaz.me",
@@ -9,14 +11,19 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "rollup --config rollup.config.js",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "prepare": "yarn test:unit && yarn build"
+    "build": "bili",
+    "lint": "eslint -c .eslintrc.js . --ext .js,.vue",
+    "test:unit": "jest",
+    "prepare": "yarn lint && yarn test:unit && yarn build"
   },
-  "main": "dist/vue-tiny-pagination.umd.js",
+  "main": "dist/vue-tiny-pagination.cjs.js",
   "module": "dist/vue-tiny-pagination.esm.js",
-  "unpkg": "dist/vue-tiny-pagination.min.js",
+  "unpkg": "dist/vue-tiny-pagination.js",
+  "jsdelivr": "dist/vue-tiny-pagination.js",
+  "cdn": "dist/vue-tiny-pagination.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderdiaz/vue-tiny-pagination.git"
@@ -35,24 +42,31 @@
     "small",
     "component"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.5",
-    "@vue/cli-plugin-eslint": "^3.0.5",
-    "@vue/cli-plugin-unit-jest": "^3.0.5",
-    "@vue/cli-service": "^3.0.5",
-    "@vue/eslint-config-airbnb": "^3.0.5",
-    "@vue/test-utils": "^1.0.0-beta.20",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
+    "bili": "^4.7.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "husky": "^1.3.1",
+    "jest": "^24.7.1",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
     "node-sass": "^4.9.0",
-    "rollup": "^1.8.0",
-    "rollup-plugin-commonjs": "^9.2.3",
-    "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-vue": "^4.7.2",
-    "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.17"
+    "vue-jest": "^3.0.4",
+    "vue-template-compiler": "^2.6.10"
   }
 }
