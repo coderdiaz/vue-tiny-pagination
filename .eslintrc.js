@@ -4,7 +4,7 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/recommended',
+    'plugin:vue/essential',
     'airbnb-base',
   ],
   rules: {
