@@ -2,26 +2,25 @@
   <div class="vue-tiny-pagination">
     <ul class="tiny-pagination" :class="customClass">
       <li class="page-item" :class="classFirstPage">
-        <a class="btn-prev-page" href="#" @click.prevent="lastPage">{{translation.prev}}</a>
+        <a class="btn-prev-page" href="#" @click.prevent="lastPage">{{ translation.prev }}</a>
       </li>
       <li class="page-item">
-        <span>{{titlePage}}</span>
+        <span>{{ titlePage }}</span>
       </li>
       <li class="page-item" :class="classLastPage">
-        <a class="btn-next-page" href="#" @click.prevent="nextPage">{{translation.next}}</a>
+        <a class="btn-next-page" href="#" @click.prevent="nextPage">{{ translation.next }}</a>
       </li>
       <li v-if="showLimit" class="page-item">
-        <select class="tiny-form-select" v-model="currentLimit" @change="onLimitChange">
+        <select v-model="currentLimit" class="tiny-form-select" @change="onLimitChange">
           <option
             v-for="(limit, index) in limits"
-            :value="limit"
-            :key="index">{{limit}}/{{translation.title}}</option>
+            :key="index"
+            :value="limit">{{ limit }}/{{ translation.title }}</option>
         </select>
       </li>
     </ul>
   </div>
 </template>
-
 <script>
 export default {
   name: 'TinyPagination',
@@ -40,19 +39,20 @@ export default {
     },
     customClass: {
       type: String,
+      default: '',
     },
     limits: {
       type: Array,
-      default () {
+      default() {
         return [10, 15, 20, 50, 100];
       },
     },
     showLimit: {
       type: Boolean,
       default: true,
-    }
+    },
   },
-  data () {
+  data() {
     return {
       version: '0.3.1',
       currentPage: 1,
@@ -67,73 +67,73 @@ export default {
           prev: 'Anterior',
           title: 'Página',
           next: 'Siguiente',
-        }
+        },
       },
       availableLanguages: ['en', 'es'],
     };
   },
-  created () {
-    this.currentPage = this.page
-  },
   computed: {
-    translation () {
-      return (this.availableLanguages.includes(this.lang)) ?
-        this.translations[this.lang]
-      : this.translations['en']
+    translation() {
+      return (this.availableLanguages.includes(this.lang))
+        ? this.translations[this.lang]
+        : this.translations.en;
     },
-    totalPages () {
-      return Math.ceil(this.total/this.currentLimit)
+    totalPages() {
+      return Math.ceil(this.total / this.currentLimit);
     },
-    titlePage () {
-      return `${this.translation.title} ${this.currentPage}`
+    titlePage() {
+      return `${this.translation.title} ${this.currentPage}`;
     },
-    classFirstPage () {
+    classFirstPage() {
       return {
         disabled: (this.currentPage === 1),
-        'c-not-allowed': true
-      }
+        'c-not-allowed': true,
+      };
     },
-    classLastPage () {
+    classLastPage() {
       return {
         disabled: (this.currentPage === this.totalPages),
-        'c-not-allowed': true
-      }
-    }
-  },
-  methods: {
-    nextPage () {
-      if (this.currentPage !== this.totalPages) {
-        this.currentPage += 1
-      }
+        'c-not-allowed': true,
+      };
     },
-    lastPage () {
-      if (this.currentPage > 1) {
-        this.currentPage -= 1
-      }
-    },
-    onLimitChange () {
-      this.currentPage = 1
-    }
   },
   watch: {
-    currentPage (value) {
+    currentPage(value) {
       this.$emit('tiny:change-page', {
-        page: value
-      })
+        page: value,
+      });
     },
-    currentLimit (value) {
+    currentLimit(value) {
       this.$emit('tiny:change-limit', {
-        limit: value
-      })
-    }
-  }
-}
+        limit: value,
+      });
+    },
+  },
+  created() {
+    this.currentPage = this.page;
+  },
+  methods: {
+    nextPage() {
+      if (this.currentPage !== this.totalPages) {
+        this.currentPage += 1;
+      }
+    },
+    lastPage() {
+      if (this.currentPage > 1) {
+        this.currentPage -= 1;
+      }
+    },
+    onLimitChange() {
+      this.currentPage = 1;
+    },
+  },
+};
 </script>
-
 <style lang="scss">
 // Pagination
+$apple-fonts: -apple-system, system-ui, BlinkMacSystemFont;
 .tiny-pagination {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-family: $apple-fonts, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   display: flex;
   list-style: none;
   margin: .2rem 0;
