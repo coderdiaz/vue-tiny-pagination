@@ -1,6 +1,6 @@
 {
   "name": "vue-tiny-pagination",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "productName": "Vue Tiny Pagination",
   "description": "A Vue component for create a tiny pagination with Flexbox",
   "author": {
