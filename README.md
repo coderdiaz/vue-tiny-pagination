@@ -67,10 +67,10 @@ Vue.use(TinyPagination)
 
 In browser you can use Unpkg:
 ```
-https://unpkg.com/vue-tiny-pagination@latest/dist/vue-tiny-pagination.min.js
+https://unpkg.com/vue-tiny-pagination@latest/dist/vue-tiny-pagination.js
 ```
 
-Example in browser here: https://jsfiddle.net/coderdiaz/g5vLex83/3/
+Example in browser here: https://jsfiddle.net/coderdiaz/da7h5wnk/
 
 ### Documentation
 
