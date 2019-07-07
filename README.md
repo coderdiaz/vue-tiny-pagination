@@ -61,7 +61,7 @@ Vue.use(TinyPagination);
 
 // or with a custom component name
 import { TinyPagination } from 'vue-tiny-pagination';
-Vue.component('custom-hello-world', TinyPagination);
+Vue.component('custom-name', TinyPagination);
 ```
 
 ### Usage in browser
