@@ -1,11 +1,11 @@
-.DS_Store
 node_modules/
 dist/
 coverage/
-npm-debug.log
 yarn-error.log
+npm-debug.log
+.DS_Store
 
-# Editor directories and files
+# Editor directories
 .idea
 *.suo
 *.ntvs*
