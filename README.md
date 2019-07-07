@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#"><img src="logotype.png" width="380"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/coderdiaz/vue-template-plugin/master/logotype.png" width="380"></a>
   <h4 align="center">A Vue component for create a tiny pagination with Flexbox</h4>
 </p>
 
