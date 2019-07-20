@@ -1,5 +1,5 @@
 # [Tiny Pagination](https://github.com/coderdiaz/vue-tiny-pagination) &middot; [![NPMVERSION](https://img.shields.io/npm/v/vue-tiny-pagination.svg?style=flat-square)](http://npmjs.com/package/vue-tiny-pagination) [![GITHUBSTARS](https://img.shields.io/github/stars/coderdiaz/vue-tiny-pagination.svg?style=flat-square)](https://github.com/coderdiaz/vue-tiny-pagination/stargazers) [![BUILD](https://travis-ci.org/coderdiaz/vue-tiny-pagination.svg?branch=master&style=flat-square)](https://travis-ci.org/coderdiaz/vue-tiny-pagination) [![DOWNLOADS](https://img.shields.io/npm/dt/vue-tiny-pagination.svg?style=flat-square)](https://npmjs.com/package/vue-tiny-pagination)
-A Vue component for create a tiny paginate 
+A Vue component for create a tiny paginate with Flexbox
 
 ## Install/Usage
 <!-- Replace the docs for usage the plugin -->
