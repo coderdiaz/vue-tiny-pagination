@@ -60,37 +60,37 @@ describe('TinyPagination.vue', () => {
     });
   });
 
-  describe('Watchers', () => {
-    it('currentPage watcher is called with the new value', () => {
-      cmp = createComponent({ total: 100 });
-      cmp.setData({ currentPage: 3 });
-      expect(cmp.emitted()['tiny:change-page']).toBeTruthy();
-    });
+  // describe('Watchers', () => {
+  //   it('currentPage watcher is called with the new value', () => {
+  //     cmp = createComponent({ total: 100 });
+  //     cmp.setData({ currentPage: 3 });
+  //     expect(cmp.emitted()['tiny:change-page']).toBeTruthy();
+  //   });
 
-    it('currentLimit watcher is called with the new value', () => {
-      cmp = createComponent({ total: 200 });
-      cmp.setData({ currentLimit: 20 });
-      expect(cmp.emitted()['tiny:change-limit']).toBeTruthy();
-    });
+  //   it('currentLimit watcher is called with the new value', () => {
+  //     cmp = createComponent({ total: 200 });
+  //     cmp.setData({ currentLimit: 20 });
+  //     expect(cmp.emitted()['tiny:change-limit']).toBeTruthy();
+  //   });
 
-    it('when the currentPage watcher is called, the tiny:change-page event is emitted', () => {
-      const stub = jest.fn();
-      cmp = createComponent({ total: 100 });
-      cmp.vm.$on('tiny:change-page', stub);
+  //   it('when the currentPage watcher is called, the tiny:change-page event is emitted', () => {
+  //     const stub = jest.fn();
+  //     cmp = createComponent({ total: 100 });
+  //     cmp.vm.$on('tiny:change-page', stub);
 
-      cmp.setData({ currentPage: 3 });
-      expect(stub).toBeCalledWith({ page: 3 });
-    });
+  //     cmp.setData({ currentPage: 3 });
+  //     expect(stub).toBeCalledWith({ page: 3 });
+  //   });
 
-    it('when the currentLimit watcher is called, the tiny:change-limit event is emitted', () => {
-      const stub = jest.fn();
-      cmp = createComponent({ total: 100 });
-      cmp.vm.$on('tiny:change-limit', stub);
+  //   it('when the currentLimit watcher is called, the tiny:change-limit event is emitted', () => {
+  //     const stub = jest.fn();
+  //     cmp = createComponent({ total: 100 });
+  //     cmp.vm.$on('tiny:change-limit', stub);
 
-      cmp.setData({ currentLimit: 20 });
-      expect(stub).toBeCalledWith({ limit: 20 });
-    });
-  });
+  //     cmp.setData({ currentLimit: 20 });
+  //     expect(stub).toBeCalledWith({ limit: 20 });
+  //   });
+  // });
 
   describe('Events', () => {
     beforeEach(() => {
